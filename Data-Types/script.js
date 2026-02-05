@@ -24,8 +24,21 @@ a += 2
 //  data types have 3 kinds;
 
 // array objects and functions 
-// [] ,  {} , () 
-// 
+// [] ,  {} , () // 
+
+// Dynamic Typing  js ma static typing nahi ha is ma dynamic typing hoti ha jis ka mtlb ha ka hum data ki type ko change kar sakta hn
+
+// like example
+
+let a4 = 12;
+
+a4 = true
+
+// truthy and falsy values
+
+0 , false , "", NaN , document.all , null , undefined
+
+// !! IS SIGN SA HUM VALUES KO CHECK KAR SAKTA HN KA YEH TRUE HN YEH FALSE HN ITS BASCIALLY TRICK
 
 
 
