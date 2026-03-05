@@ -150,4 +150,162 @@ function abc() {
 
 
 // hoisting difference b/w declartion and experisson
+
+// rest operator
+
+
+function sumAll(a,b,c,d,) {
+    return a + b + c + d
+}
+
+let finalSum = sumAll(1,2,3,4);
+console.log(finalSum)
  
+
+function priting(name ,...rest) {
+    return name , rest
+}
+let finalPrint = priting("Hamza",1234)
+console.log(finalPrint)
+
+
+function howManyArg(a,b,c,d) {
+ return a + b + c + d
+}
+howManyArg(1,2,3,4)
+
+
+// First Class Functions
+
+// JavaScript ma function ek value ki tarha hota ha jesa hum variable create karta hn un ko koi values deta hn esi tarha hum variable create kara ga or us ko value function da da ga 
+// for example : 
+ 
+let sayHello = function () {
+    console.log("Hello ")
+} 
+ sayHello();  // yahan function ek value ban gaya
+
+// mtlb variable ma store kar sakta ho kesi function ma pass kar sakta ho return kar sakta ho
+
+
+// Function ko Call Karna
+
+function greet(fn) {
+    fn()
+}
+
+greet(function () {
+    console.log("Hello Hamza How are you!")
+})
+
+
+function outer() {
+    return function () {
+        console.log("Inner Function")
+    }
+}
+
+// Outer ek function return kar raha ha
+// or result us function ko run kar raha ha
+let result = outer(); 
+result();
+
+
+// practice set of First Class Funtions
+
+let sumOfTwo = function (a,b) {
+    a + b
+}
+
+let finalSumOf = sumOfTwo(10,5);
+console.log(finalSum)
+
+
+function saySomeThing(v1) {
+    v1();
+}
+
+saySomeThing(function () {
+    console.log("Hey Whatsap buddy what's going with you")
+})
+
+
+function boss() {
+    return function () {
+        console.log("are you going?")
+    }
+}
+
+let result1 = boss();
+result1()
+
+
+function greetings(v1) {
+    v1();
+    v1();
+}
+greetings(function () {
+    console.log("Hello Buddy")
+})
+
+
+function takeTowVal(v1) {
+    v1(50)
+}
+
+takeTowVal(function (num) {
+    console.log(`${num}`)
+})
+
+
+function sayHello() {
+    return function () {
+        console.log("Hello")
+    }
+}
+
+let saygreet = sayHello();
+
+saygreet()
+
+
+// Closures = function + uskaMemory Outer(variables)
+
+// mtlb inner function ko apna parent ka data yad rehta ha
+
+
+
+function outerScore(params) {
+    let score = 0
+    return function() {
+        score += 10
+        console.log(score)
+    }
+}
+
+let updatedScore = outerScore();
+updatedScore();
+updatedScore();
+updatedScore();
+
+
+function sayHello (name) {
+    return function () {
+        console.log(`Hello ${name}`)
+    }
+}
+
+let sayMyName = sayHello("Hamza");
+sayMyName()
+
+
+function printSecret() {
+    let secret = 123;
+    return function () {
+        console.log(secret)
+    }
+}
+
+let showTheSecret = printSecret()
+
+showTheSecret();
