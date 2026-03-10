@@ -68,16 +68,17 @@ let newArr = studentsRollNum.map(function () {
     return 12 // to kia hoga ek new array ban jai ga jis ma 12 hoga 5 bar because hamara purana arrya ma 5 elements hn  or is ka result dheak na k liya hama is ko ek new variable ma store karna hoga 
 })
 
-console.log(newArr) 
+console.log(newArr);
 
 // filter kia karta ha filter bhi ek new array bana ta h but purana arrays ma sa kuch ko lata h or kuch ko chor deta h arrays ma
 
 let array1 = [1,2,3,4,5,6,7,8];
 
 let newarray1 = array1.filter(function (val) {
-    if (val > 4)  return true
+
+    if (val > 4)  return true;
     
-})
+});
 
 console.log(newarray1);
 
@@ -87,26 +88,25 @@ console.log(newarray1);
 let arrRedcue = [1,2,3,4,5];
 
 let ans = arrRedcue.reduce(function (acc,val) {
-    return acc + val
-},0)
+    return acc + val;
+},0);
 
 
 // Destructuring and speard operator
 let deStructuring = [1,2,3,4,5];
 
-let [a,b,,d] = deStructuring
+let [a,b,,d] = deStructuring;
 
 let ar1 = [1,2,3,4,5,6,7,8,9];
 
-let ar2 = [...ar1]
+let ar2 = [...ar1];
 
 let fruites = ["Apple", "Banana","Peach"];
 
-fruites[1]
+fruites[1];
 
-fruites.push("Mango")
-fruites.unshift("Pinapple")
+fruites.push("Mango");
+fruites.unshift("Pinapple");
 
 fruites[2] = "kiwi";
-
-fruites.pop()
+fruites.pop();
