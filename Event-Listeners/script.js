@@ -20,3 +20,12 @@ const h1 = document.querySelector("h1")
 sl.addEventListener("change",function (det) {
     h1.textContent = `Your Car is ${det.target.value}`
 })
+
+const h4 = document.querySelector("h4");
+window.addEventListener("keydown",function (dets) {
+    if (dets.key === " ") {
+        h4.textContent = "SPC"
+    } else {
+        h4.textContent = dets.key
+    }
+})
