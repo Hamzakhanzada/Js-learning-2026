@@ -29,3 +29,18 @@ window.addEventListener("keydown",function (dets) {
         h4.textContent = dets.key
     }
 })
+
+const btn = document.querySelector(".btn");
+const inp = document.querySelector(".inp")
+
+btn.addEventListener("click",function () {
+    inp.click()
+})
+
+
+inp.addEventListener("change",function (dets) {
+    const file = dets.target.files[0];
+    if (file) {
+        btn.textContent = file.name
+    }
+})

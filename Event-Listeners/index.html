@@ -10,7 +10,6 @@
         text-transform: capitalize;
     }
     body {
-        background-color: black;
     }
     h4 {
         color: white;
@@ -20,6 +19,20 @@
         font-size: 7rem;
         font-weight: 600;
 
+    }
+    .inp {
+        
+        display: none;
+    }
+    .btn {
+        background-color: aqua;
+        color:white;
+        padding: 12px 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        margin: auto;
     }
  </style>
 
@@ -37,6 +50,12 @@
     </select>
             <h4>Hello</h4>
 
+            <div id="main">
+            <input class="inp" type="file">
+            <div class="btn">
+                Upload
+            </div>
+            </div>
     <script src="script.js"></script>
 </body>
 </html>
