@@ -44,3 +44,24 @@ inp.addEventListener("change",function (dets) {
         btn.textContent = file.name
     }
 })
+
+
+const abcd = document.querySelector(".abcd");
+abcd.addEventListener("mouseover",function () {
+    abcd.style.backgroundColor = "Yellow"
+})
+abcd.addEventListener("mouseout",function () {
+    abcd.style.backgroundColor = "red"
+})
+
+
+// events Bubbling 
+
+
+const ul = document.querySelector("ul");
+
+ul.addEventListener("click",function (dets) {
+    dets.target.classList.toggle("lt");
+})
+
+
