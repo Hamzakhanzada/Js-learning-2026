@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="w-full max-w-md bg-white shadow-lg rounded-2xl p-6">
+      <h1 class="text-2xl font-bold text-center mb-4">ToDos</h1>
+
+      <input
+        type="text"
+        placeholder="Add a new todo..."
+        class="w-full p-3 border rounded-lg outline-none mb-4"
+      />
+
+      <ul class="space-y-3"></ul>
+    </div>
+  </body>
+  <script>
+    const ul = document.querySelector("ul");
+    const inp = document.querySelector("input");
+    let todos = [];
+
+    const stored = JSON.parse(localStorage.getItem("todos"));
+
+    if (stored) {
+      todos = stored;
+    }
+
+    todos.forEach(function (todo) {
+      renderTodo(todo);
+    });
+
+    function renderTodo(todo) {
+      const li = document.createElement("li");
+      li.className =
+        "flex items-center justify-between bg-gray-50 p-3 rounded-lg";
+      const left = document.createElement("div");
+      left.className = "flex items-center gap-2";
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.checked = todo.completed;
+
+      const span = document.createElement("span");
+      span.textContent = todo.text;
+
+      const btn = document.createElement("button");
+      btn.textContent = "Delete";
+      btn.className = "text-red-500";
+
+      btn.addEventListener("click", function() {
+    li.remove();
+
+    const index = todos.indexOf(todo);
+    if(index > -1) {
+        todos.splice(index, 1);
+    }
+
+    localStorage.setItem("todos", JSON.stringify(todos));
+});
+
+      left.appendChild(checkbox);
+      left.appendChild(span);
+
+      li.appendChild(left);
+      li.appendChild(btn);
+
+      ul.appendChild(li);
+
+      checkbox.addEventListener("change", function() {
+    todo.completed = checkbox.checked;
+    localStorage.setItem("todos", JSON.stringify(todos));
+});
+
+if (todo.completed) {
+    span.style.textDecoration = "line-through";
+}
+    }
+
+    inp.addEventListener("keyup", function (dets) {
+        if (dets.key === "Enter") {
+          todos.push({
+            text: inp.value,
+            completed: false,
+          });
+
+          localStorage.setItem("todos", JSON.stringify(todos));
+
+          renderTodo({
+            text: inp.value,
+            completed: false,
+          });
+
+          inp.value = "";
+        }
+      });
+      
+  </script>
+</html>
+
